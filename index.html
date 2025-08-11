@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estación del Año</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>¿Qué estación es?</h1>
+        <label for="numero">Ingresa un número (1-4):</label>
+        <input type="number" id="numero" min="1" max="4">
+        <button onclick="mostrarEstacion()">Mostrar estación</button>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function mostrarEstacion() {
+            const numero = document.getElementById('numero').value;
+            let estacion = '';
+            switch (numero) {
+                case '1':
+                    estacion = 'Primavera';
+                    break;
+                case '2':
+                    estacion = 'Verano';
+                    break;
+                case '3':
+                    estacion = 'Otoño';
+                    break;
+                case '4':
+                    estacion = 'Invierno';
+                    break;
+                default:
+                    estacion = 'Por favor ingresa un número del 1 al 4.';
+            }
+            document.getElementById('resultado').textContent = estacion;
+        }
+    </script>
+</body>
+</html>
